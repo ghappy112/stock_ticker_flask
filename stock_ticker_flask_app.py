@@ -1,6 +1,7 @@
 from flask import Flask
+app = Flask(__name__)
 
-@app.route('/stocks')
+@app.route('/')
 def stocks():
   return '''
   <html lang="en">
@@ -84,3 +85,6 @@ def stocks():
 
   </html>
   '''
+
+if "__name__" == "__main__":
+    app.run(debug=True)
